@@ -3,10 +3,11 @@ jobs:
   build-and-test:
     machine:
       image: ubuntu-2004:202104-01
+      resource_class: medium
     steps:
       - checkout
       - run: make deps
-      - run: make lint  # Dodany krok uruchamiający linter
+      - run: make lint
       - run: make test
 workflows:
   basic:
