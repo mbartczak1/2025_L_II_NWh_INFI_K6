@@ -10,12 +10,10 @@ test:
 
 docker_build:
 	docker build -t hello-world-printer .
-
 USERNAME=mbartczak1
-TAG=$(USERNAME)/hello-world-printer
-
+TAG=$(USERNAME)/hello-world-printer-k3
 docker_push: docker_build
-	@docker login --username "$(USERNAME)" --password "$$DOCKER_PASSWORD"
-	docker tag hello-world-printer $(TAG)
-	docker push $(TAG)
-	docker logout
+	@docker login --username "$(USERNAME)" --password "$$DOCKER_PASSWORD"; \
+	docker tag hello-world-printer $(TAG); \
+	docker push $(TAG); \
+	docker logout;
