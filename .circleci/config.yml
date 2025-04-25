@@ -1,14 +1,15 @@
 version: 2.1
 jobs:
   build-and-test:
-    docker:
-      - image: circleci/python:3.9
+    machine:
+      image: ubuntu-2204:2024.01.2 
+      resource_class: medium 
     steps:
       - checkout
       - run: make deps
       - run: make lint
       - run: make test
-      - run: make docker_build 
+      - run: make docker_build
 workflows:
   basic:
     jobs:
