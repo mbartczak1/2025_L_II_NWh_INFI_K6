@@ -15,4 +15,3 @@ jobs:
 workflows:
   basic:
     jobs:
-      - build-and-test
