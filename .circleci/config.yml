@@ -3,7 +3,7 @@ jobs:
   build-and-test:
     machine:
       image: ubuntu-2004:202104-01
-      resource_class: medium
+      resource_class: small
     steps:
       - checkout
       - run: make deps
